@@ -1,7 +1,7 @@
-import CardCustom from './components/Card'
-import { Card, Space } from 'antd';
-import { Button, Flex } from 'antd';
-import WrapperCard from './components/WrapperCard';
+// import CardCustom from './components/Card'
+// import { Card, Space } from 'antd';
+// import { Button, Flex } from 'antd';
+// import WrapperCard from './components/WrapperCard';
 import List from './components/List';
 
 function App() {
@@ -10,8 +10,8 @@ function App() {
   
     <div>
       <h2>App</h2>
-      <Button type="primary">Primary Button</Button>
-      <Space vertical size={16}>
+      {/* <Button type="primary">Primary Button</Button> */}
+      {/* <Space vertical size={16}>
         <Card 
         title="Default size card" 
         extra={<a href="#">More</a>} 
@@ -59,8 +59,8 @@ function App() {
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, doloribus?"
             } 
         />
-      </WrapperCard>
-      {/* <List /> */}
+      </WrapperCard> */}
+      <List />
 
     </div>
     
