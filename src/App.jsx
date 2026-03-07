@@ -2,9 +2,13 @@
 // import { Card, Space } from 'antd';
 // import { Button, Flex } from 'antd';
 // import WrapperCard from './components/WrapperCard';
+import { useState } from 'react';
+import Counter from './components/Counter';
 import List from './components/List';
 
 function App() {
+
+  const [open, setOpen] = useState(true)
 
   return (
   
@@ -60,7 +64,10 @@ function App() {
             } 
         />
       </WrapperCard> */}
-      <List />
+      <button onClick={() => setOpen ((prev) => !prev)}>open</button>
+      {open && <List /> }
+      {/* <List /> */}
+      <Counter/>
 
     </div>
     

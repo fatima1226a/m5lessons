@@ -1,16 +1,11 @@
 import cls from "./Card.module.scss"
 
-const Card = ({id, name}) => {
-  const onClick = () => {
-    console.log("click" + id);
-    
-  }
+const Card = ({name}) => {
   
   return (
-    <div className={cls.card} onClick={() => onClick()}>
+    <div className={cls.card} >
       <div>
-        <h2>{id}</h2>
-        <p>{name}</p>
+        <h2>{name}</h2>
       </div>
     </div>
   )

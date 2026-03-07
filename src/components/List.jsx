@@ -1,23 +1,68 @@
 // import React from 'react'
-import data from '../db/data.json'
+// import data from '../db/data.json'
 import Card from './Card/Card'
 import WrapperCard from './WrapperCard'
 
+import { useEffect, useState } from "react"
+
 const List = () => {
-  const {results} = data
+  const [inputValue, setinputValue] = useState("")
+  const [list, setList] = useState([])
+
+  
+  const onChange = (e) => {
+    // console.log(e.target.value);
+    setinputValue(e.target.value)
+  }
+
+  const onClick = () => {
+    setList((prev) => [...prev, inputValue])
+    setinputValue("")
+    // console.log(list);
+    
+  }
+
+  // const {results} = data
+
+  useEffect(() => {
+    console.log("Mounting");
+    
+  }, [] )
+
+  useEffect(() => {
+    console.log("Updating");
+    
+  }, [inputValue, list])
+
+  useEffect(() => {
+    return (() => {
+      console.log("Remounting");
+    })
+  }, [])
+
   return (
     <div>
       <h2>List</h2>
       <WrapperCard>
-        {results.map((item) => (
+        {list.map((item, key) => (
           <Card 
-          key={item.id} 
-          id={item.id} 
-          name={item.name}
+          key={key} 
+          name={item}
           />
         ))}
       </WrapperCard>
-      
+      <div>
+        <input type="text" value={inputValue} onChange={onChange} placeholder="To do..." />
+        <button onClick={onClick}>create</button>
+
+          {/* {list.map  ((item) => (
+            <p>{item}</p>
+          )
+        )} */}
+
+
+        
+      </div>
     </div>
     
     
