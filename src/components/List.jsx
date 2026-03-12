@@ -1,11 +1,9 @@
-// import React from 'react'
 // import data from '../db/data.json'
 import Card from './Card/Card'
 import WrapperCard from './WrapperCard'
+import { memo, useState } from "react"
 
-import { useEffect, useState } from "react"
-
-const List = () => {
+const List = memo(({value, click}) => {
   const [inputValue, setinputValue] = useState("")
   const [list, setList] = useState([])
 
@@ -24,25 +22,30 @@ const List = () => {
 
   // const {results} = data
 
-  useEffect(() => {
-    console.log("Mounting");
-    
-  }, [] )
 
-  useEffect(() => {
-    console.log("Updating");
+  // useEffect(() => {
+  //   console.log("Mounting");
     
-  }, [inputValue, list])
+  // }, [] )
 
-  useEffect(() => {
-    return (() => {
-      console.log("Remounting");
-    })
-  }, [])
+  // useEffect(() => {
+  //   console.log("Updating");
+    
+  // }, [inputValue, list])
+
+  // useEffect(() => {
+  //   return (() => {
+  //     console.log("Remounting");
+  //   })
+  // }, [])
+
+  console.log(value, "render");
+  
 
   return (
     <div>
       <h2>List</h2>
+      {/* <button onClick={click}>click</button> */}
       <WrapperCard>
         {list.map((item, key) => (
           <Card 
@@ -59,7 +62,7 @@ const List = () => {
             <p>{item}</p>
           )
         )} */}
-
+ 
 
         
       </div>
@@ -67,6 +70,6 @@ const List = () => {
     
     
   )
-}
+})
 
 export default List
